@@ -1,3 +1,5 @@
+#this solution is only 83.33% correct
+
 opening_char = ["[","{","("] 
 closing_char = ["]","}",")"]
 
