@@ -2,16 +2,16 @@ opening_char = ["[","{","("]
 closing_char = ["]","}",")"]
 
 def check_delimiters(input_list):
-    stack = []
+    opening_stack=[]
+    closing_stack=[]
+    
     for i in input_list:
         if i in opening_char:
-            stack.append(i)
+            opening_stack.append(opening_char.index(i))
         elif i in closing_char:
-            coor = closing_char.index(i)
-            if opening_char[coor] == stack[len(stack)-1] and len(stack) != 0:
-                stack.pop()
+            closing_stack.append(closing_char.index(i))
     
-    if len(stack) == 0:
+    if sum(opening_stack) == sum(closing_stack):
         return True
     else:
         return False
